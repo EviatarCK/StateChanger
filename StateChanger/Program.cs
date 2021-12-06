@@ -2,19 +2,17 @@
 
 namespace HomeWorkState
 {
-
-
     public class PlayerController
     {
         static void Main(string[] args)
         {
             PlayerController player = new PlayerController(new StandingState());
-            player.PressPlay();
+            player.GetKey();
             player.StateChanger();
-            player.PressPlay();
-            player.PressPlay();
+            player.GetKey();
+            player.GetKey();
             player.StateChanger();
-            player.PressPlay();
+            player.GetKey();
             player.StateChanger();
         }
         private PlayerControllerState _state;
@@ -24,7 +22,7 @@ namespace HomeWorkState
             _state = state;
         }
 
-        public void PressPlay()
+        public void GetKey()
         {
             _state.PressKey(this);
         }
